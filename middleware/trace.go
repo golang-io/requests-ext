@@ -140,7 +140,13 @@ func show(prompt string, b []byte, mLimit int) string {
 	return str
 }
 
-func TraceLv(v int, mLimit ...int) func(http.RoundTripper) http.RoundTripper {
+func TraceLv(v int, mLimit ...int) requests.Option {
+	return func(o *requests.Options) {
+		o.HttpRoundTripper = append([]func(http.RoundTripper) http.RoundTripper{traceLv(v, mLimit...)}, o.HttpRoundTripper...)
+	}
+}
+
+func traceLv(v int, mLimit ...int) func(http.RoundTripper) http.RoundTripper {
 	return func(next http.RoundTripper) http.RoundTripper {
 		return requests.RoundTripperFunc(func(req *http.Request) (*http.Response, error) {
 			if v == 0 {
@@ -175,11 +181,12 @@ func TraceLv(v int, mLimit ...int) func(http.RoundTripper) http.RoundTripper {
 				}
 			}
 			if v >= 4 {
-				buf, err := requests.ParseBody(resp.Body)
+				buf, r, err := requests.CopyBody(resp.Body)
 				if err != nil {
 					Log("! response error: %w", err)
 					return nil, err
 				}
+				resp.Body = r
 				Log(show("", buf.Bytes(), maxLimit))
 			}
 			return resp, nil
