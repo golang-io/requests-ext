@@ -13,7 +13,7 @@ func ServeStat(ww *requests.ResponseWriter, r *http.Request, start time.Time, bu
 		StartAt: start.Format("2006-01-02 15:04:05.000"),
 		Cost:    time.Since(start).Milliseconds(),
 	}
-	stat.Request.Remote = r.RemoteAddr
+	stat.Request.RemoteAddr = r.RemoteAddr
 	stat.Request.Method = r.Method
 	stat.Request.Header = make(map[string]string)
 	for k, v := range r.Header {

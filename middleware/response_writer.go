@@ -26,6 +26,6 @@ func ServeLog(f func(*requests.Stat)) func(http.Handler) http.Handler {
 func PrintStat(stat *requests.Stat) string {
 	return fmt.Sprintf("%s %s \"%s -> %s%s\" - %d %dB in %dms",
 		stat.StartAt, stat.Request.Method,
-		stat.Request.Remote, stat.Response.URL, stat.Request.URL,
+		stat.Request.RemoteAddr, stat.Response.URL, stat.Request.URL,
 		stat.Response.StatusCode, stat.Response.ContentLength, stat.Cost)
 }
