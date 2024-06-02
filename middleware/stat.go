@@ -35,11 +35,11 @@ func ServeStat(ww *requests.ResponseWriter, r *http.Request, start time.Time, bu
 	}
 	stat.Response.URL = scheme + r.Host
 	stat.Response.StatusCode = ww.StatusCode
-	stat.Response.ContentLength = ww.ContentLength
+	stat.Response.ContentLength = int64(len(ww.Content))
 	stat.Response.Header = make(map[string]string)
 	for k, v := range r.Header {
 		stat.Response.Header[k] = v[0]
 	}
-	stat.Response.Body = "[-]"
+	stat.Response.Body = string(ww.Content)
 	return stat
 }
