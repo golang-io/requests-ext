@@ -1,6 +1,10 @@
 github.com/golang-io/requests v0.0.0-20240602184658-b3f4a452b2e0 h1:9yY6q5g1BOmN4mk0vXEfDel6vbYuQSiBv+c++KaQqxE=
 github.com/golang-io/requests v0.0.0-20240602184658-b3f4a452b2e0/go.mod h1:vEpXWewdPynSg2PqVQmNo87Nw9ujO2DttSmCuPy2MNE=
+github.com/golang-io/requests v0.0.0-20240618192054-f8d9745cd274 h1:bb/JRS06OCa9SKJlzl9OnpD7tEsVPL3eTzsyb4HYZ2I=
+github.com/golang-io/requests v0.0.0-20240618192054-f8d9745cd274/go.mod h1:vEpXWewdPynSg2PqVQmNo87Nw9ujO2DttSmCuPy2MNE=
 github.com/gorilla/websocket v1.5.1 h1:gmztn0JnHVt9JZquRuzLw3g4wouNVzKL15iLr/zn/QY=
 github.com/gorilla/websocket v1.5.1/go.mod h1:x3kM2JMyaluk02fnUJpQuwD2dCS5NDG2ZHL0uE0tcaY=
+github.com/gorilla/websocket v1.5.3 h1:saDtZ6Pbx/0u+bgYQ3q96pZgCzfhKXGPqt7kZ72aNNg=
+github.com/gorilla/websocket v1.5.3/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 golang.org/x/net v0.24.0 h1:1PcaxkF854Fu3+lvBIx5SYn9wRlBzzcnHZSiaFFAb0w=
 golang.org/x/net v0.24.0/go.mod h1:2Q7sJY5mzlzWjKtYUEXSlBWCdyaioyXzRB2RtU8KVE8=
